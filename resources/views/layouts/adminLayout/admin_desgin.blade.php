@@ -3,6 +3,8 @@
 <head>
 <title>test </title>
 <meta charset="UTF-8" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="{{asset('css/backend_css/bootstrap.min.css')}}" />
 <link rel="stylesheet" href="{{asset('css/backend_css/bootstrap-responsive.min.css')}}" />
@@ -45,23 +47,17 @@
 <!--end-Footer-part-->
 
 <script src="{{asset('js/backend_js/excanvas.min.js')}}"></script> 
-<script src="{{asset('js/backend_js/jquery.min.js')}}"></script> 
-<script src="{{asset('js/backend_js/jquery.ui.custom.js')}}"></script> 
-<script src="{{asset('js/backend_js/bootstrap.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.flot.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.flot.resize.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.peity.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/fullcalendar.min.js')}}"></script> 
-<script src="{{asset('js/backend_js/matrix.js')}}"></script> 
 <script src="{{asset('js/backend_js/matrix.dashboard.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.gritter.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/matrix.interface.js')}}"></script> 
+
 <script src="{{asset('js/backend_js/matrix.chat.js')}}"></script> 
-<script src="{{asset('js/backend_js/jquery.validate.js')}}"></script> 
-<script src="{{asset('js/backend_js/matrix.form_validation.js')}}"></script> 
+
 <script src="{{asset('js/backend_js/jquery.wizard.js')}}"></script> 
-<script src="{{asset('js/backend_js/jquery.uniform.js')}}"></script> 
-<script src="{{asset('js/backend_js/select2.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/matrix.popover.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.dataTables.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/matrix.tables.js')}}"></script> 
@@ -90,5 +86,16 @@ function resetMenu() {
    document.gomenu.selector.selectedIndex = 2;
 }
 </script>
+
+<script src="{{asset('js/backend_js/jquery.min.js')}}"></script> 
+<script src="{{asset('js/backend_js/jquery.ui.custom.js')}}"></script> 
+<script src="{{asset('js/backend_js/bootstrap.min.js')}}"></script> 
+<script src="{{asset('js/backend_js/jquery.uniform.js')}}"></script> 
+<script src="{{asset('js/backend_js/select2.min.js')}}"></script> 
+<script src="{{asset('js/backend_js/jquery.validate.js')}}"></script> 
+<script src="{{asset('js/backend_js/matrix.js')}}"></script> 
+<script src="{{asset('js/backend_js/matrix.form_validation.js')}}"></script>
+
+
 </body>
 </html>
