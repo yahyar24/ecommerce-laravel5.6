@@ -63,6 +63,92 @@ $("#cuurent_pwd").keyup(function(){
 		}
 	});
 	
+    // Category Validation
+		$("#add_category").validate({
+			rules:{
+				category_name:{
+					required:true
+				},
+				url:{
+					required:true
+				}
+			},
+			errorClass: "help-inline",
+			errorElement: "span",
+			highlight:function(element, errorClass, validClass) {
+				$(element).parents('.control-group').addClass('error');
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).parents('.control-group').removeClass('error');
+				$(element).parents('.control-group').addClass('success');
+			}
+		});
+	
+		// Product Validation
+		$("#add_product").validate({
+			rules:{
+				category_id:{
+					required:true
+				},
+				product_name:{
+					required:true
+				},
+				product_code:{
+					required:true
+				},
+				product_color:{
+					required:true
+				},
+				price:{
+					required:true,
+					number:true
+				},
+				image:{
+					required:true
+				}
+			},
+			errorClass: "help-inline",
+			errorElement: "span",
+			highlight:function(element, errorClass, validClass) {
+				$(element).parents('.control-group').addClass('error');
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).parents('.control-group').removeClass('error');
+				$(element).parents('.control-group').addClass('success');
+			}
+		});
+	
+		// Product Validation
+		$("#edit_product").validate({
+			rules:{
+				category_id:{
+					required:true
+				},
+				product_name:{
+					required:true
+				},
+				product_code:{
+					required:true
+				},
+				product_color:{
+					required:true
+				},
+				price:{
+					required:true,
+					number:true
+				}
+			},
+			errorClass: "help-inline",
+			errorElement: "span",
+			highlight:function(element, errorClass, validClass) {
+				$(element).parents('.control-group').addClass('error');
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).parents('.control-group').removeClass('error');
+				$(element).parents('.control-group').addClass('success');
+			}
+		});
+	
 	$("#number_validate").validate({
 		rules:{
 			min:{
@@ -118,4 +204,23 @@ $("#cuurent_pwd").keyup(function(){
 			$(element).parents('.control-group').addClass('success');
 		}
 	});
+
+	$(document).on('click','.deleteRecord',function(e){
+		var id = $(this).attr('rel');
+		var deleteFunction = $(this).attr('rel1');
+		swal({
+			title: "Are you sure?",
+			text: "Your will not be able to recover this Record Again!",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonClass: "btn-danger",
+			confirmButtonText: "Yes, delete it!",
+			closeOnConfirm: false
+		},
+		function(){
+				window.location.href="/admin/"+deleteFunction+"/"+id;
+		});
+});
+
+
 });

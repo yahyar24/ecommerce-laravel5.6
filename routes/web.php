@@ -29,6 +29,28 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/admin/settings','AdminController@settings');
     Route::get('/admin/check-pwd','AdminController@chkPassword');
     Route::match(['get','post'],'/admin/update-pwd','AdminController@updatePassword');
+    //route category
+
+    Route::match(['get', 'post'], '/admin/add-category','CategoryController@addCategory');
+    Route::match(['get', 'post'], '/admin/edit-category/{id}','CategoryController@editCategory');
+	Route::match(['get', 'post'], '/admin/delete-category/{id}','CategoryController@deleteCategory');
+    Route::get('/admin/view-categories','CategoryController@viewCategories');
+    
+    //route product
+    Route::match(['get','post'],'/admin/add-product','ProductsController@addProduct');
+	Route::match(['get','post'],'/admin/edit-product/{id}','ProductsController@editProduct');
+	Route::get('/admin/delete-product/{id}','ProductsController@deleteProduct');
+	Route::get('/admin/view-products','ProductsController@viewProducts');
+	Route::get('/admin/delete-product-image/{id}','ProductsController@deleteProductImage');
+	
+	Route::match(['get', 'post'], '/admin/add-images/{id}','ProductsController@addImages');
+    Route::get('/admin/delete-alt-image/{id}','ProductsController@deleteProductAltImage');
+    
+    // Admin Attributes Routes
+	Route::match(['get', 'post'], '/admin/add-attributes/{id}','ProductsController@addAttributes');
+	Route::match(['get', 'post'], '/admin/edit-attributes/{id}','ProductsController@editAttributes');
+	Route::get('/admin/delete-attribute/{id}','ProductsController@deleteAttribute');
+
 
 
 });
